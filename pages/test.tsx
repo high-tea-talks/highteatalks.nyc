@@ -1,0 +1,1 @@
+export { Test as default } from '../src/pages/Test';
