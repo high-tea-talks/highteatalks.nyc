@@ -1,0 +1,205 @@
+@import '../_utilities.scss';
+
+.event {
+    position: relative;
+    z-index: 2;
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 5;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 12.5vw 18vw 1fr;
+    -ms-grid-rows: 1fr;
+    grid-template-columns: 12.5vw 18vw 1fr;
+    height: rem-calc(910);
+    font-size: rem-calc(16);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    h3 {
+        font-family: $butler-regular-family;
+        font-size: rem-calc(32);
+        letter-spacing: rem-calc(1);
+        margin-bottom: rem-calc(76);
+    }
+
+    h4 {
+        font-family: $cutive-mono-family;
+        color: $hightea_red;
+        font-size: rem-calc(20);
+        letter-spacing: rem-calc(-2);
+        margin-bottom: rem-calc(8);
+    }
+
+    h5 {
+        margin-bottom: rem-calc(100);
+        font-family: $cutive-mono-family;
+        font-size: rem-calc(14);
+        letter-spacing: rem-calc(-0.5);
+
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: rem-calc(16);
+        }
+    }
+
+    @media screen and (max-width: em-calc(1080)) {
+        height: 90vw;
+    }
+
+
+    @media screen and (max-width: em-calc(850)) {
+        height: auto;
+
+        h3 {
+            margin-bottom: rem-calc(30);
+            font-size: rem-calc(28);
+        }
+
+        h4 {
+            font-size: rem-calc(18);
+        }
+
+        h5 {
+            margin-bottom: rem-calc(50);
+        }
+    }
+
+
+    @media screen and (max-width: em-calc(850)) {
+        h3 {
+            font-size: rem-calc(24);
+        }
+
+        h4 {
+            font-size: rem-calc(16);
+        }
+    }
+}
+
+.event__content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column-start: 2;
+    grid-column-end: -1;
+    -ms-grid-columns: 18vw 1fr;
+    -ms-grid-rows: 1fr;
+    grid-template-columns: 18vw 1fr;
+    grid-template-rows: 1fr;
+
+    background-color: #051d43;
+    color: $white;
+
+    h3,
+    h4,
+    h5,
+    ul {
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        max-width: rem-calc(580);
+    }
+
+    @media screen and (max-width: rem-calc(850)) {
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+
+        padding-top: rem-calc(50);
+        padding-top: rem-calc(50);
+    }
+}
+
+.event__copy {
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding-right: rem-calc(30);
+
+    @media screen and (max-width: rem-calc(850)) {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-column: 1 / span 2;
+        padding-left: rem-calc(30);
+        padding-bottom: rem-calc(30);
+    }
+}
+
+.event__desc {
+    display: inline-block;
+    max-width: rem-calc(450);
+    margin-bottom: rem-calc(20);
+}
+
+.event__location-link {
+    color: $white;
+    border-bottom: 1px dotted rgba(255,255,255,0.6);
+    margin-left: rem-calc(12);
+    text-decoration: none;
+
+    &:hover {
+        border-bottom: 1px solid rgba(255,255,255, 1);
+    }
+}
+
+.event__schedule {
+    font-size: rem-calc(14);
+    line-height: 1.25;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.event_sponsor_laptop {
+    position: absolute;
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    max-width: rem-calc(220);
+    transform: translateX(-7vw) translateY(-16%) rotate(20deg);
+
+    @supports (-ms-ime-align:auto) {
+        transform: translateX(2px) translateY(-16%) rotate(20deg);
+    }
+
+    @media screen and (max-width: em-calc(1080)) {
+        max-width: 25vw;
+    }
+
+    @media screen and (max-width: rem-calc(850)) {
+        display: none;
+    }
+}
+
+.event__time {
+    margin-right: rem-calc(24);
+}
+
+.event_wine_bottle {
+    position: absolute;
+    bottom: 0;
+    grid-row: -1;
+    -ms-grid-row-align: end;
+    align-self: end;
+    max-width: rem-calc(322);
+    transform: translateX(1vw) translateY(3vw);
+
+    @supports not (align-self: end) {
+        bottom: 0;
+    }
+
+    @media screen and (max-width: em-calc(1080)) {
+        max-width: 34vw;
+    }
+
+    @media screen and (max-width: em-calc(850)) {
+        display: none;
+    }
+}

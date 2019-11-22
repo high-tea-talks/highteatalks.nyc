@@ -1,0 +1,112 @@
+@import '../_utilities.scss';
+
+
+.participate__invitation,
+.participate__submit-talk {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding-left: 15%;
+    padding-right: 20%;
+    padding-top: 5%;
+    margin-bottom: rem-calc(100);
+
+    h3 {
+        font-size: rem-calc(32);
+        font-family: $butler-medium-family;
+        max-width: rem-calc(360);
+        margin-bottom: rem-calc(20);
+    }
+
+    p {
+        font-family: $butler-medium-family;
+        margin-bottom: rem-calc(80);
+    }
+}
+
+.participate__invitation {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 4;
+    grid-column: 1 / span 2;
+    background-color: #CD9F74;
+    height: rem-calc(670);
+
+    p,
+    h3 {
+        color: $vino_blue;
+    }
+
+    @media screen and (max-width: em-calc(790)) {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
+        grid-column: 1 / span 4;
+        height: auto;
+        padding: rem-calc(30);
+        margin-bottom: 0;
+
+        h3 {
+            font-size: rem-calc(28);
+        }
+    }
+
+    @media screen and (max-width: em-calc(400)) {
+        h3 {
+            font-size: rem-calc(24);
+        }
+    }
+}
+
+.participate__submit-talk {
+    position: relative;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 4;
+    grid-column: 3 / span 2;
+
+    p,
+    h3 {
+        color: $hightea_red;
+    }
+
+    button {
+        position: relative;
+        z-index: 2;
+    }
+
+    img {
+        position: absolute;
+        bottom: rem-calc(-40);
+        left: rem-calc(-94);
+    }
+
+    @media screen and (max-width: em-calc(790)) {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
+        grid-column: 1 / span 4;
+        height: auto;
+        padding: rem-calc(30);
+        margin-bottom: 0;
+
+        h3 {
+            font-size: rem-calc(28);
+        }
+
+        img {
+            left: initial;
+            right: 0;
+        }
+    }
+
+    @media screen and (max-width: em-calc(650)) {
+        img {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: em-calc(400)) {
+        h3 {
+            font-size: rem-calc(24);
+        }
+    }
+}

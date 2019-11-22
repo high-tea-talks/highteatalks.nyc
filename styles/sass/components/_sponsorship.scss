@@ -1,0 +1,80 @@
+@import '../_utilities.scss';
+
+.sponsorship__thank-you,
+.sponsorship__sign-up {
+    max-width: 90%;
+    font-size: rem-calc(14);
+    color: $vino_blue;
+    margin-top: rem-calc(100);
+
+    h3 {
+        font-family: $butler-medium-family;
+        font-size: rem-calc(32);
+        margin-bottom: rem-calc(32);
+    }
+
+    p {
+        line-height: 1.25;
+        margin-bottom: rem-calc(64);
+    }
+
+    a:not(.btn)  {
+        text-decoration: none;
+        color: $hightea_red;
+
+        &:hover {
+            border-bottom: 1px dotted;
+        }
+    }
+}
+
+.sponsorship__thank-you {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 5;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    -ms-grid-row-align: end;
+    justify-self: end;
+    padding-right: 12vw;
+    border-right: 1px solid $vino_blue;
+
+    @media screen and (max-width: em-calc(790)) {
+        margin: rem-calc(30);
+        padding-right: 0;
+
+        -ms-grid-column-span: 4;
+        grid-column-end: 5;
+        border-right: none;
+        border-top: 1px solid $vino_blue;
+
+        h3 {
+            margin-top: rem-calc(30);
+            font-size: rem-calc(28);
+        }
+    }
+}
+
+.sponsorship__sign-up {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4 / span 1 ;
+    -ms-grid-row: 5;
+    -ms-grid-row-align: start;
+    justify-self: start;
+    padding-left: 10vw;
+
+    @media screen and (max-width: em-calc(790)) {
+        margin: rem-calc(30);
+        padding: 0;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
+        grid-column: 1 / span 4;
+        border-top: 1px solid $vino_blue;
+
+        h3 {
+            margin-top: rem-calc(30);
+            font-size: rem-calc(28);
+        }
+    }
+}

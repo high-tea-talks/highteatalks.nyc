@@ -1,0 +1,86 @@
+@import '../_utilities.scss';
+
+nav {
+    background-color: $white;
+    margin-left: rem-calc(24);
+    margin-right: rem-calc(24);
+    padding-top: rem-calc(64);
+}
+
+.nav__items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: rem-calc(1220);
+    margin: 0 auto;
+
+    @media screen and (max-width: em-calc(720)) {
+        flex-wrap: wrap;
+
+        li:first-child {
+            flex: 1 0 100%;
+        }
+    }
+
+}
+
+.nav__item {
+    font-size: rem-calc(16);
+    letter-spacing: 0.04em;
+    margin-right: 4vw;
+
+    a {
+        font-family: $butler-regular-family;
+        color: $hightea_red;
+        text-decoration: none;
+        transition: 0.1s border-bottom ease-in-out;
+
+        &:hover {
+            border-bottom: 1px dotted;
+        }
+    }
+
+    span {
+        display: block;
+        margin-top: rem-calc(4);
+        font-family: $cutive-mono-family;
+        color: $vino_blue;
+        font-size: rem-calc(14);
+        letter-spacing: -0.04em;
+
+        @media screen and (max-width: em-calc(960)) {
+            display: none;
+        }
+    }
+
+    &.start-items {
+        margin-left: auto;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @media screen and (max-width: em-calc(1080)) {
+        margin-right: 3vw;
+    }
+
+    @media screen and (max-width: em-calc(720)) {
+        margin-top: rem-calc(16);
+
+        &.start-items {
+            margin-left: 0;
+        }
+    }
+}
+
+.nav__logo {
+    width: 100%;
+    max-width: rem-calc(204);
+    height: rem-calc(46);
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        width: auto;
+        height: auto;
+    }
+}

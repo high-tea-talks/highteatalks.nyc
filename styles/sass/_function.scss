@@ -1,0 +1,10 @@
+@function rem-calc($value) {
+    $remvalue: $value / 16;
+    @return $remvalue * 1rem;
+}
+
+// Should only be used for media queries
+@function em-calc($value) {
+    $emvalue: $value / 16;
+    @return $emvalue * 1em;
+}

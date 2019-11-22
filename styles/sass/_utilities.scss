@@ -1,0 +1,34 @@
+@import './_function.scss';
+
+@font-face {
+    font-family: 'Cutive Mono';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../../fonts/CutiveMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Butler Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../../fonts/butler_regular-webfont.woff2') format('woff2'),
+        url('../../fonts/butler_regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Butler Medium';
+    font-weight: bold;
+    font-style: bold;
+    src: url('../../fonts/butler_medium-webfont.woff2') format('woff2'),
+        url('../../fonts/butler_medium-webfont.woff') format('woff');
+}
+
+
+$white: #ffffff;
+$hightea_red: #F0696A;
+$vino_blue: #051542;
+$mustard_yellow: #CD9F74;
+
+$cutive-mono-family: 'Cutive Mono', 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+$butler-regular-family: 'Butler Regular', Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+$butler-medium-family: 'Butler Medium', Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;

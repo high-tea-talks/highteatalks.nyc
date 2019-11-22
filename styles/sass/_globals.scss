@@ -1,0 +1,74 @@
+@import './_utilities.scss';
+
+$layoutMaxWidth:  rem-calc(1220);
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+}
+
+body {
+    font-family: $cutive-mono-family;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.btn,
+a.btn {
+    max-width: 240px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgba(0,0,0,0);
+    font-family: $cutive-mono-family;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    border: 1px solid $vino_blue;
+    color: $vino_blue;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        background-color: $vino_blue;
+        color: $white;
+    }
+
+    &.lg {
+        padding: rem-calc(18) rem-calc(20);
+        font-size: rem-calc(16);
+        letter-spacing: rem-calc(-1);
+    }
+
+    &.primary {
+        border: 1px solid $hightea_red;
+        color: $hightea_red;
+
+        &:hover {
+            background-color: $hightea_red;
+            color: $white;
+        }
+    }
+}
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 36px 36px 1fr;
+    grid-template-columns: 1fr 36px 36px 1fr;
+    width: 100%;
+    max-width: $layoutMaxWidth;
+    margin: rem-calc(80) auto 0 auto;
+}
+
+.visuallyhidden {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}

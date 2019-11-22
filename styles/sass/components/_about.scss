@@ -1,0 +1,162 @@
+@import '../_utilities.scss';
+
+.about__images {
+    position: relative;
+    display: grid;
+
+    -ms-grid-columns: calc(100%/3) calc(100%/3)  calc(100%/3);
+    -ms-grid-rows: 33vw 33vw 33vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
+
+    height: rem-calc(600);
+    background-color: $hightea_red;
+    margin-bottom: rem-calc(160);
+
+    @media screen and (max-width: em-calc(1080)) {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: em-calc(720)) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+        -ms-grid-column-span: 2;
+        grid-column: span 2;
+    }
+
+    @media screen and (max-width: em-calc(600)) {
+        display: none;
+    }
+}
+
+@keyframes FadeInOut {
+    0% {
+        opacity:1;
+    }
+    17% {
+        opacity:1;
+    }
+    25% {
+        opacity:0;
+    }
+    92% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.about__image01 {
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    max-width: 70%;
+    bottom: rem-calc(50);
+    left: 50%;
+    transform: translateX(-30%);
+    -webkit-animation: FadeInOut 8s ease-in-out 6s infinite;
+    -moz-animation: FadeInOut 8s ease-in-out 6s infinite;
+    animation: FadeInOut 8s ease-in-out 6s infinite;
+}
+
+.about__image02 {
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    max-width: 70%;
+    bottom: rem-calc(50);
+    left: 50%;
+    transform: translateX(-60%);
+    -webkit-animation: FadeInOut 8s ease-in-out 4s infinite;
+    -moz-animation: FadeInOut 8s ease-in-out 4s infinite;
+    animation: FadeInOut 8s ease-in-out 4s infinite;
+}
+.about__image03 {
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    max-width: 70%;
+    bottom: rem-calc(50);
+    left: 50%;
+    transform: translateX(-30%);
+    -webkit-animation: FadeInOut  8s ease-in-out 2s infinite;
+    -moz-animation:   FadeInOut 8s ease-in-out 2s infinite;
+    animation:  FadeInOut 8s ease-in-out 2s infinite;
+}
+.about__image04 {
+    opacity: 0;
+    z-index: 3;
+    position: absolute;
+    max-width: 70%;
+    bottom: rem-calc(50);
+    left: 50%;
+    transform: translateX(-70%);
+    -webkit-animation: FadeInOut 8s ease-in-out 0s infinite;
+    -moz-animation: FadeInOut 8s ease-in-out 0s infinite;
+    animation: FadeInOut 8s ease-in-out 0s infinite;
+}
+.about__copy {
+    position: relative;
+    margin-bottom: rem-calc(160);
+    background: linear-gradient(to right, $hightea_red 0%, $hightea_red 6%,rgba(255,255,255,0) 6%,rgba(255,255,255,0) 6%,$hightea_red 6%,rgba(255,255,255,0) 6%,rgba(255,255,255,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: rem-calc(30);
+    -ms-grid-column: 4;
+    -ms-grid-row: 2;
+    -ms-grid-column-span: 1;
+
+    h2 {
+        font-family: $butler-medium-family;
+        color: $hightea_red;
+        font-size: rem-calc(32);
+        margin-bottom: rem-calc(32);
+    }
+
+    p {
+        font-size: rem-calc(14);
+        max-width: rem-calc(372);
+        line-height: 1.25;
+    }
+
+    p + p {
+        margin-top: rem-calc(24);
+    }
+
+    img {
+        transform: translateX(70%) translateY(130%);
+    }
+
+    @media screen and (max-width: em-calc(1080)) {
+        background: none;
+        padding-right: rem-calc(30);
+        margin-bottom: 10vw;
+    }
+
+
+    @media screen and (max-width: em-calc(720)) {
+        grid-column: 3 / span 3;
+    }
+
+    @media screen and (max-width: em-calc(600)) {
+        align-items: start;
+        padding-left: rem-calc(30);
+        grid-column: 1 / span 4;
+        background: none;
+        padding-right: rem-calc(30);
+
+        img {
+            margin-top: rem-calc(30);
+            margin-left: auto;
+            transform: none;
+        }
+    }
+}

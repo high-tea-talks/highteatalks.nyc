@@ -1,9 +1,0 @@
-node_modules
-package-lock.json
-yarn.lock
-.DS_STORE
-.DS_Store
-.vscode
-.cache
-.gh-pages/*
-.next
