@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Page } from '../Page';
+
+import { Page } from '../components/Page';
 
 export const Home = props => {
   return (

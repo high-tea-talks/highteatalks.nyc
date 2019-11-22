@@ -1,5 +1,5 @@
 import React from 'react';
-import { SHE } from './pronouns';
+import { SHE } from '../data/pronouns';
 
 export const Footer = props => {
   return (
