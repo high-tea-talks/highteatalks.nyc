@@ -5,15 +5,25 @@ import { Upcoming } from './Upcoming';
 
 import { Page, HomeBlock, Sponsors } from '../../components';
 import { yellow, red } from '../../color';
+import { sponsors } from '../../data';
 
 export function Home(props) {
+  const sponsorJobs =
+    sponsors.length > 0 &&
+    sponsors.filter(({ href, tier }) => tier > 1 && href);
+
+  const { darjeeling, silverTips, matcha, lavendar } = sponsors;
+
   return (
     <Page {...props}>
       <Hero />
-      <Sponsors.Diamond>Pink Diamond Sponsors</Sponsors.Diamond>
+
+      <Sponsors sponsors={darjeeling} />
       <About id="about" />
-      <Sponsors.Pearl>Pearl Sponsors</Sponsors.Pearl>
+      <Sponsors sponsors={silverTips} />
+
       <Upcoming id="upcoming" />
+
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <HomeBlock
           title="High Tea Talks are once every quarter."
@@ -28,8 +38,8 @@ export function Home(props) {
           links={<a href="#">Submit a talk idea</a>}
         />
         <HomeBlock
-          title="Thank you to our Sponsors."
-          links={sponsors.filter(({ href }) => href)}
+          title="Thank you to our Sponsor"
+          links={sponsorJobs}
         >
           We're extremely grateful to have the High Tea Talks Fall
           event hosted and sponsored (location and drinks!!) by
@@ -44,9 +54,10 @@ export function Home(props) {
           part of the dinner. All of our sponsors are hiring–please
           checkout their job boards for exciting new opportunities.
         </HomeBlock>
-        <Sponsors.Garnet>Garnet Sponsors</Sponsors.Garnet>
-        <Sponsors.Amethyst>Amethyst Sponsors</Sponsors.Amethyst>
       </div>
+
+      <Sponsors sponsors={matcha} />
+      <Sponsors sponsors={lavendar} />
     </Page>
   );
 }
@@ -62,7 +73,7 @@ const Hero = styled.div`
   border-radius: 0.1875rem;
 `;
 
-const About = props => {
+function About(props) {
   return (
     <div style={{ display: 'flex' }} {...props}>
       <div
@@ -89,15 +100,4 @@ const About = props => {
       </div>
     </div>
   );
-};
-
-const sponsors = [
-  {
-    name: 'Skillshare',
-    href: 'https://www.skillshare.com/careers',
-  },
-  {
-    name: 'Vimeo',
-    href: 'https://vimeo.com/jobs',
-  },
-];
+}
