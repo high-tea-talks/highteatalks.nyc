@@ -1,22 +1,24 @@
-const fs = require('fs');
+export default undefined;
 
-const pages = [
-  {
-    component: 'Home',
-    route: '/',
-  },
-  {
-    component: 'Test',
-    route: '/test',
-  },
-];
+// const fs = require('fs');
 
-pages.map(({ component, route }) => {
-  const pageSrc = `export { ${component} as default } from '../src/pages/${component}';`;
-  route = route === '/' ? 'index' : route;
-  fs.writeFile(`./pages/${route}.tsx`, pageSrc, error);
-});
+// const pages = [
+//   {
+//     component: 'Home',
+//     route: '/',
+//   },
+//   {
+//     component: 'Test',
+//     route: '/test',
+//   },
+// ];
 
-function error(error) {
-  if (error) throw error;
-}
+// pages.map(({ component, route }) => {
+//   const pageSrc = `export { ${component} as default } from '../src/pages/${component}';`;
+//   route = route === '/' ? 'index' : route;
+//   fs.writeFile(`./pages/${route}.tsx`, pageSrc, error);
+// });
+
+// function error(error) {
+//   if (error) throw error;
+// }
