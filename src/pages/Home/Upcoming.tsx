@@ -45,6 +45,9 @@ export function Upcoming(props) {
             <span>Au revoir!</span>
           </li>
         </ul>
+        <div>
+          <a href="/upcoming">Learn more!</a>
+        </div>
       </div>
       <WineBottle />
     </UpcomingStyled>

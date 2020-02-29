@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Page, HomeBlock } from '../../components';
+import { Page, HomeBlock, Sponsors } from '../../components';
 import { sponsors } from '../../data';
 
 const Tier = styled(HomeBlock)`
@@ -14,17 +14,27 @@ export function Partner(props) {
     .map(tier => sponsors[tier])
     .sort((a, b) => (a.commitment > b.commitment ? 1 : -1));
 
+  const sponsorJobs =
+    sponsors.length > 0 &&
+    sponsors.filter(({ href, tier }) => tier > 1 && href);
+
+  const { darjeeling, silverTips, matcha, lavendar } = sponsors;
+
   return (
     <Page {...props}>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {tiers.map(({ name, commitment }) => (
-          <Tier title={name}>
+        {tiers.map(({ name, commitment }, key) => (
+          <Tier key={key} title={name}>
             <h2>${commitment}/yr</h2>
             or
             <h2>${commitment / 10}/mo</h2>
           </Tier>
         ))}
       </div>
+      <Sponsors sponsors={darjeeling} />
+      <Sponsors sponsors={silverTips} />
+      <Sponsors sponsors={matcha} />
+      <Sponsors sponsors={lavendar} />
     </Page>
   );
 }

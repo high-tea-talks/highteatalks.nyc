@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import { SHE } from '../data';
@@ -22,9 +22,13 @@ const FooterStyled = styled.footer`
 `;
 
 function Squad({ people }) {
-  return people.map((babe, i, { length }) => (
-    <a href={'https://twitter.com/' + babe.url} target="_blank">
-      {babeText(babe, i, length)}
+  return people.map((babe, key, { length }) => (
+    <a
+      key={key}
+      href={'https://twitter.com/' + babe.url}
+      target="_blank"
+    >
+      {babeText(babe, key, length)}
     </a>
   ));
 }
@@ -32,13 +36,13 @@ function Squad({ people }) {
 function Designers({ people, ...props }) {
   return (
     <span {...props}>
-      {people.map(({ name, url, role }) => (
-        <>
+      {people.map(({ name, url, role }, key) => (
+        <Fragment key={key}>
           {role}:
           <a href={'http://' + url} target="_blank">
             {name}
           </a>
-        </>
+        </Fragment>
       ))}
     </span>
   );

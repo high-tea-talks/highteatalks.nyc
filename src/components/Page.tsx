@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
 import styled from 'styled-components';
 
 import { Footer } from '../components';
-import { red, blue } from '../color';
+import { red, blue, black } from '../color';
+import { UserContext } from '../data';
+import { rgba } from 'polished';
 
 export function Page({ children, ...props }) {
   return (
@@ -15,6 +17,9 @@ export function Page({ children, ...props }) {
 }
 
 function Nav({}) {
+  const user = useContext(UserContext);
+  console.log({ user });
+
   return (
     <NavStyled>
       <NavLink href="/" style={{ marginRight: 'auto' }}>
@@ -32,9 +37,50 @@ function Nav({}) {
       <NavLink href="/partner">
         Sponsorship<span>Help us grow.</span>
       </NavLink>
+      {user.loggedin && (
+        <>
+          <NavLink href="/listing">
+            Jobs Listing<span>Lorem ipsum dolor.</span>
+          </NavLink>
+          <Avatar></Avatar>
+        </>
+      )}
     </NavStyled>
   );
 }
+
+const Avatar = styled.div`
+  border: 0.2rem solid ${rgba(black, 0.35)};
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    border: 0.2rem solid ${rgba(black, 0.25)};
+    width: 1.5rem;
+    height: 1rem;
+    border-radius: 50% 50% 0 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: 0.2rem solid ${rgba(black, 0.25)};
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+`;
 
 const PageStyled = styled.div`
   margin: 0 auto;
@@ -42,14 +88,15 @@ const PageStyled = styled.div`
 `;
 
 const NavStyled = styled.div`
-  margin: 5rem 1rem;
+  margin: 5rem 1rem 3rem 1rem;
   display: flex;
+  align-items: center;
 `;
 
 const NavLink = styled.a`
   color: ${red};
   padding: 0.25rem;
-  margin: 0 2rem 2rem 0;
+  margin: 0 2rem 0 0;
   position: relative;
   cursor: pointer;
 

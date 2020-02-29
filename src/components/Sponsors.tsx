@@ -12,8 +12,8 @@ export function Sponsors({ children, sponsors, ...props }: any) {
         <br />
 
         <SponsorsStyled>
-          {sponsors.map(({ name }) => (
-            <div>{name}</div>
+          {sponsors.map(({ name }, key) => (
+            <div key={key}>{name}</div>
           ))}
         </SponsorsStyled>
       </Wrapper>
